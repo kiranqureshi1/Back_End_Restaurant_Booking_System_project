@@ -1,4 +1,4 @@
 package com.Project.RestaurantBooking.System.Repositories.CustomerRepositories;
 
-public class customerRepositoryImpl {
+public class CustomerRepositoryImpl {
 }
