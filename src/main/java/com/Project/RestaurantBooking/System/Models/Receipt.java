@@ -6,8 +6,8 @@ import javax.persistence.*;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "reciepts")
-public class Reciept {
+@Table(name = "receipts")
+public class Receipt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,12 @@ public class Reciept {
     @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
 
-    public Reciept(int amount) {
+    public Receipt(int amount, Booking booking) {
         this.amount = amount;
+        this.booking = booking;
     }
 
-    public Reciept(){
+    public Receipt(){
 
     }
 

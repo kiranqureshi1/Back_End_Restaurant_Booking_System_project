@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/resturantTables")
-public class ResturantTableController {
+public class RestaurantTableController {
 }

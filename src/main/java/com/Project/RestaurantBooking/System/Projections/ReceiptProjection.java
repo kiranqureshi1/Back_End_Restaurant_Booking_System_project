@@ -1,4 +1,4 @@
 package com.Project.RestaurantBooking.System.Projections;
 
-public class RecieptProjection {
+public class ReceiptProjection {
 }

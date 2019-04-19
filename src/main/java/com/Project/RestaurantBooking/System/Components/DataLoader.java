@@ -2,18 +2,16 @@ package com.Project.RestaurantBooking.System.Components;
 
 import com.Project.RestaurantBooking.System.Models.Booking;
 import com.Project.RestaurantBooking.System.Models.Customer;
-import com.Project.RestaurantBooking.System.Models.Reciept;
-import com.Project.RestaurantBooking.System.Models.ResturantTable;
+import com.Project.RestaurantBooking.System.Models.Receipt;
+import com.Project.RestaurantBooking.System.Models.RestaurantTable;
 import com.Project.RestaurantBooking.System.Repositories.BookingRepositories.BookingRepository;
 import com.Project.RestaurantBooking.System.Repositories.CustomerRepositories.CustomerRepository;
-import com.Project.RestaurantBooking.System.Repositories.RecieptRepositories.RecieptRepository;
-import com.Project.RestaurantBooking.System.Repositories.ResturantTableRepositories.ResturantTableRepository;
+import com.Project.RestaurantBooking.System.Repositories.ReceiptRepositories.ReceiptRepository;
+import com.Project.RestaurantBooking.System.Repositories.RestaurantTableRepositories.RestaurantTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-
-import javax.persistence.Table;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -25,10 +23,10 @@ public class DataLoader implements ApplicationRunner {
     CustomerRepository customerRepository;
 
     @Autowired
-    ResturantTableRepository resturantTableRepository;
+    RestaurantTableRepository restaurantTableRepository;
 
     @Autowired
-    RecieptRepository recieptRepository;
+    ReceiptRepository receiptRepository;
 
     public DataLoader(){
 
@@ -41,22 +39,28 @@ public class DataLoader implements ApplicationRunner {
         Customer customer2 = new Customer("Jay");
         customerRepository.save(customer2);
 
-        ResturantTable resturantTable1 = new ResturantTable(1);
-        resturantTableRepository.save(resturantTable1);
+        RestaurantTable restaurantTable1 = new RestaurantTable(1);
+        restaurantTableRepository.save(restaurantTable1);
 
-        ResturantTable resturantTable2 = new ResturantTable(2);
-        resturantTableRepository.save(resturantTable2);
+        RestaurantTable restaurantTable2 = new RestaurantTable(2);
+        restaurantTableRepository.save(restaurantTable2);
 
-        Reciept reciept1 = new Reciept(30);
-        recieptRepository.save(reciept1);
-
-        Reciept reciept2 = new Reciept(40);
-        recieptRepository.save(reciept2);
-
-        Booking booking1 = new Booking(3, 04, customer1, resturantTable1, reciept1);
+        Booking booking1 = new Booking(3, 04, customer1, restaurantTable1);
         bookingRepository.save(booking1);
 
-        Booking booking2 = new Booking(4, 05, customer2, resturantTable2, reciept2);
+        Booking booking2 = new Booking(4, 05, customer2, restaurantTable2);
+        bookingRepository.save(booking2);
+
+        Receipt receipt1 = new Receipt(30, booking1);
+        receiptRepository.save(receipt1);
+
+        Receipt receipt2 = new Receipt(40, booking2);
+        receiptRepository.save(receipt2);
+
+        booking1.setReceipt(receipt1);
+        bookingRepository.save(booking1);
+
+        booking2.setReceipt(receipt2);
         bookingRepository.save(booking2);
     }
 

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.persistence.Table;
-import java.awt.print.Book;
 
 @Entity
 @Table(name = "bookings")
@@ -28,20 +27,19 @@ public class Booking {
 
     @JsonIgnoreProperties("bookings")
     @ManyToOne
-    @JoinColumn(name = "resturantTable_id", nullable = false)
-    private ResturantTable resturantTable;
+    @JoinColumn(name = "restaurantTable_id", nullable = false)
+    private RestaurantTable restaurantTable;
 
     @JsonIgnore
     @OneToOne
-    @JoinColumn(name = "reciept_id", nullable = false)
-    private Reciept reciept;
+    @JoinColumn(name = "receipt_id")
+    private Receipt receipt;
 
-    public Booking(int time, int date, Customer customer, ResturantTable resturantTable, Reciept reciept) {
+    public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable) {
         this.time = time;
         this.date = date;
         this.customer = customer;
-        this.resturantTable = resturantTable;
-        this.reciept = reciept;
+        this.restaurantTable = restaurantTable;
     }
 
     public Booking(){
@@ -80,19 +78,19 @@ public class Booking {
         this.customer = customer;
     }
 
-    public ResturantTable getResturantTable() {
-        return resturantTable;
+    public RestaurantTable getRestaurantTable() {
+        return restaurantTable;
     }
 
-    public void setResturantTable(ResturantTable resturantTable) {
-        this.resturantTable = resturantTable;
+    public void setRestaurantTable(RestaurantTable restaurantTable) {
+        this.restaurantTable = restaurantTable;
     }
 
-    public Reciept getReciept() {
-        return reciept;
+    public Receipt getReceipt() {
+        return receipt;
     }
 
-    public void setReciept(Reciept reciept) {
-        this.reciept = reciept;
+    public void setReceipt(Receipt receipt) {
+        this.receipt = receipt;
     }
 }
