@@ -1,5 +1,6 @@
 package com.Project.RestaurantBooking.System.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -27,17 +28,19 @@ public class Booking {
 
     @JsonIgnoreProperties("bookings")
     @ManyToOne
-    @JoinColumn(name = "table_id", nullable = false)
-    private Table table;
+    @JoinColumn(name = "resturantTable_id", nullable = false)
+    private ResturantTable resturantTable;
 
-    @Column
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "reciept_id", nullable = false)
     private Reciept reciept;
 
-    public Booking(int time, int date, Customer customer, Table table, Reciept reciept) {
+    public Booking(int time, int date, Customer customer, ResturantTable resturantTable, Reciept reciept) {
         this.time = time;
         this.date = date;
         this.customer = customer;
-        this.table = table;
+        this.resturantTable = resturantTable;
         this.reciept = reciept;
     }
 
@@ -77,12 +80,12 @@ public class Booking {
         this.customer = customer;
     }
 
-    public Table getTable() {
-        return table;
+    public ResturantTable getResturantTable() {
+        return resturantTable;
     }
 
-    public void setTable(Table table) {
-        this.table = table;
+    public void setResturantTable(ResturantTable resturantTable) {
+        this.resturantTable = resturantTable;
     }
 
     public Reciept getReciept() {

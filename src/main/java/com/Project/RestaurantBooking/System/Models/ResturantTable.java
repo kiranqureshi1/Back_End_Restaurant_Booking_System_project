@@ -5,27 +5,26 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
-
 @Entity
-@javax.persistence.Table(name = "tables")
-public class Table {
+@Table(name = "resturantTables")
+public class ResturantTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "resturantTable", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
     @Column
     private int tableNumber;
 
-    public Table(int tableNumber) {
+    public ResturantTable(int tableNumber) {
         this.tableNumber = tableNumber;
     }
 
-    public Table(){
+    public ResturantTable(){
 
     }
 
@@ -52,4 +51,6 @@ public class Table {
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
     }
+
+
 }

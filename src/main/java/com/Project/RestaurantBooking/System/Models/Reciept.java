@@ -1,5 +1,7 @@
 package com.Project.RestaurantBooking.System.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 
@@ -13,6 +15,11 @@ public class Reciept {
 
     @Column
     private int amount;
+
+    @JsonIgnore
+    @OneToOne
+    @JoinColumn(name = "booking_id", nullable = false)
+    private Booking booking;
 
     public Reciept(int amount) {
         this.amount = amount;
