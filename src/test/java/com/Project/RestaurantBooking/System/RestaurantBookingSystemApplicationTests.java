@@ -13,6 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RestaurantBookingSystemApplicationTests {
@@ -36,6 +38,7 @@ public class RestaurantBookingSystemApplicationTests {
 	@Test
 	public void canGetBookingsForSpeicficDate(){
 		List<Booking> found = bookingRepository.findBookingByDate(04);
-
+		assertEquals(1, found.size());
+		assertEquals(1, found.get(0).getId(), 0);
 	}
 }
