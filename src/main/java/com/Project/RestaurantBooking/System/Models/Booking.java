@@ -58,6 +58,12 @@ public class Booking {
         this.bookingStatus = bookingStatus;
     }
 
+    public boolean dontAllowDoubleBooking(){
+        if(this.bookingStatus == true){
+            return false;
+        }return true;
+    }
+
 
     public Long getId() {
         return id;

@@ -13,6 +13,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -28,11 +31,18 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ReceiptRepository receiptRepository;
 
+    Booking booking1;
+    Booking booking2;
+
     public DataLoader(){
 
     }
 
     public void run(ApplicationArguments args){
+
+//        ArrayList<Booking> bookings = new ArrayList<Booking>();
+//        bookings.add(booking1);
+//        bookings.add(booking2);
         Customer customer1 = new Customer("John");
         customerRepository.save(customer1);
 
@@ -62,6 +72,8 @@ public class DataLoader implements ApplicationRunner {
 
         booking2.setReceipt(receipt2);
         bookingRepository.save(booking2);
+
+
     }
 
 
