@@ -13,4 +13,6 @@ public class RestaurantBookingSystemApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+
 }
