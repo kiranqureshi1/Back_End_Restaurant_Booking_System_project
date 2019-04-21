@@ -10,6 +10,6 @@ import java.util.List;
 public interface CustomerProjection {
     long getId();
     String getName();
-    List<Booking> getBookings();
+    List<BookingProjection> getBookings();
 
 }
