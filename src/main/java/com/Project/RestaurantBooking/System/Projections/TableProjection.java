@@ -9,6 +9,6 @@ import java.util.List;
 @Projection(name= "embedBookings", types = RestaurantTable.class)
 public interface TableProjection {
     long getId();
-    List<Booking> getBookings();
+    List<BookingProjection> getBookings();
     int getTableNumber();
 }
