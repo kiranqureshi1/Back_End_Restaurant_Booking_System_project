@@ -76,6 +76,9 @@ public class DataLoader implements ApplicationRunner {
         booking1.setBookingStatus(true);
         bookingRepository.save(booking1);
 
+        booking2.setBookingStatus(true);
+        bookingRepository.save(booking2);
+
 
 
     }
