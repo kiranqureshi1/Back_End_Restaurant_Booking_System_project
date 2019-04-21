@@ -7,7 +7,7 @@ import org.springframework.data.rest.core.config.Projection;
 import java.util.List;
 
 @Projection(name= "embedBookings", types = RestaurantTable.class)
-public interface TableProjection {
+public interface RestaurantTableProjection {
     long getId();
     List<BookingProjection> getBookings();
     int getTableNumber();
