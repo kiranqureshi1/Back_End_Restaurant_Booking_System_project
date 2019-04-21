@@ -38,12 +38,11 @@ public class Booking {
     @JoinColumn(name = "receipt_id")
     private Receipt receipt;
 
-    public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable, boolean bookingStatus) {
+    public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable) {
         this.time = time;
         this.date = date;
         this.customer = customer;
         this.restaurantTable = restaurantTable;
-        this.bookingStatus = bookingStatus;
     }
 
     public Booking(){
