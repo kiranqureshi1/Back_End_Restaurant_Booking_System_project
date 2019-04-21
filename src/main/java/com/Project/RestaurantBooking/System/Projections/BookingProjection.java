@@ -14,5 +14,4 @@ public interface BookingProjection {
     int getDate();
     Customer getCustomer();
     RestaurantTable getRestaurantTable();
-    Receipt getReciept();
 }
