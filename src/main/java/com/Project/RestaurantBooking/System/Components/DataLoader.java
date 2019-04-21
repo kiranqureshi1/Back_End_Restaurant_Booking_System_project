@@ -73,6 +73,10 @@ public class DataLoader implements ApplicationRunner {
         booking2.setReceipt(receipt2);
         bookingRepository.save(booking2);
 
+        booking1.setBookingStatus(true);
+        bookingRepository.save(booking1);
+
+
 
     }
 
