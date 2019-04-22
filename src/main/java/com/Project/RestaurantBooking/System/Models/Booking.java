@@ -30,10 +30,6 @@ public class Booking {
     @JoinColumn(name = "restaurantTable_id", nullable = false)
     private RestaurantTable restaurantTable;
 
-    @Column
-    private boolean bookingStatus;
-
-    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "receipt_id")
     private Receipt receipt;
@@ -47,20 +43,6 @@ public class Booking {
 
     public Booking(){
 
-    }
-
-    public boolean isBookingStatus() {
-        return bookingStatus;
-    }
-
-    public void setBookingStatus(boolean bookingStatus) {
-        this.bookingStatus = bookingStatus;
-    }
-
-    public boolean dontAllowDoubleBooking(){
-        if(this.bookingStatus == true){
-            return false;
-        }return true;
     }
 
 
