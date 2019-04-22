@@ -55,12 +55,6 @@ public class DataLoader implements ApplicationRunner {
         RestaurantTable restaurantTable2 = new RestaurantTable(2);
         restaurantTableRepository.save(restaurantTable2);
 
-//        Receipt receipt1 = new Receipt(30, booking1);
-//        receiptRepository.save(receipt1);
-//
-//        Receipt receipt2 = new Receipt(40, booking2);
-//        receiptRepository.save(receipt2);
-
         Booking booking1 = new Booking(3, 04, customer1, restaurantTable1, 40);
         bookingRepository.save(booking1);
 
@@ -70,12 +64,6 @@ public class DataLoader implements ApplicationRunner {
         Booking booking3 = new Booking(4, 05, customer2, restaurantTable1, 50);
         bookingRepository.save(booking3);
 
-
-//        booking1.setReceipt(receipt1);
-//        bookingRepository.save(booking1);
-//
-//        booking2.setReceipt(receipt2);
-//        bookingRepository.save(booking2);
 
         booking1.setBookingStatus(true);
         bookingRepository.save(booking1);
