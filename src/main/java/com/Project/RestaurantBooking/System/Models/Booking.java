@@ -64,6 +64,13 @@ public class Booking {
         }return true;
     }
 
+    public int getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(int receipt) {
+        this.receipt = receipt;
+    }
 
     public Long getId() {
         return id;
