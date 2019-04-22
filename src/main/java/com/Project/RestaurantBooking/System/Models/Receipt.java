@@ -16,14 +16,11 @@ public class Receipt {
     @Column
     private int amount;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    private Booking booking;
 
-    public Receipt(int amount, Booking booking) {
+//    private Booking booking;
+
+    public Receipt(int amount) {
         this.amount = amount;
-        this.booking = booking;
     }
 
     public Receipt(){

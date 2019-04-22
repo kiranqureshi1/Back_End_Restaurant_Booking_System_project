@@ -10,4 +10,5 @@ public interface ReceiptProjection {
     long getId();
     int getAmount();
     Booking getBooking();
+
 }

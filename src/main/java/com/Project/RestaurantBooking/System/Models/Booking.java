@@ -33,16 +33,17 @@ public class Booking {
     @Column
     private boolean bookingStatus;
 
-    @JsonIgnore
-    @OneToOne
-    @JoinColumn(name = "receipt_id")
-    private Receipt receipt;
+//    @JsonIgnore
+//    @OneToOne
+//    @JoinColumn(name = "receipt_id")
+    private int receipt;
 
-    public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable) {
+    public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable, int receipt) {
         this.time = time;
         this.date = date;
         this.customer = customer;
         this.restaurantTable = restaurantTable;
+        this.receipt = receipt;
     }
 
     public Booking(){
@@ -104,11 +105,11 @@ public class Booking {
         this.restaurantTable = restaurantTable;
     }
 
-    public Receipt getReceipt() {
-        return receipt;
-    }
-
-    public void setReceipt(Receipt receipt) {
-        this.receipt = receipt;
-    }
+//    public Receipt getReceipt() {
+//        return receipt;
+//    }
+//
+//    public void setReceipt(Receipt receipt) {
+//        this.receipt = receipt;
+//    }
 }
