@@ -33,9 +33,6 @@ public class Booking {
     @Column
     private boolean bookingStatus;
 
-//    @JsonIgnore
-//    @OneToOne
-//    @JoinColumn(name = "receipt_id")
     private int receipt;
 
     public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable, int receipt) {
@@ -112,11 +109,4 @@ public class Booking {
         this.restaurantTable = restaurantTable;
     }
 
-//    public Receipt getReceipt() {
-//        return receipt;
-//    }
-//
-//    public void setReceipt(Receipt receipt) {
-//        this.receipt = receipt;
-//    }
 }
