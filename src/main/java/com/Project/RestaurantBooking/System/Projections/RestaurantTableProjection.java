@@ -1,15 +1,14 @@
 package com.Project.RestaurantBooking.System.Projections;
 
 import com.Project.RestaurantBooking.System.Models.Booking;
-import com.Project.RestaurantBooking.System.Models.Customer;
+import com.Project.RestaurantBooking.System.Models.RestaurantTable;
 import org.springframework.data.rest.core.config.Projection;
 
 import java.util.List;
 
-@Projection(name= "embedBookings", types = Customer.class)
-public interface CustomerProjection {
+@Projection(name= "embedBookings", types = RestaurantTable.class)
+public interface RestaurantTableProjection {
     long getId();
-    String getName();
     List<BookingProjection> getBookings();
-
+    int getTableNumber();
 }
