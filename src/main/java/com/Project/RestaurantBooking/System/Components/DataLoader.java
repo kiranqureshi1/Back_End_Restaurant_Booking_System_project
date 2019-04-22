@@ -61,6 +61,9 @@ public class DataLoader implements ApplicationRunner {
         Booking booking2 = new Booking(4, 05, customer2, restaurantTable2);
         bookingRepository.save(booking2);
 
+        Booking booking3 = new Booking(4, 05, customer2, restaurantTable1);
+        bookingRepository.save(booking3);
+
         Receipt receipt1 = new Receipt(30, booking1);
         receiptRepository.save(receipt1);
 
