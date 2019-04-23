@@ -33,6 +33,7 @@ public class Booking {
     @Column
     private boolean bookingStatus;
 
+    @Column
     private int receipt;
 
 
