@@ -35,6 +35,7 @@ public class Booking {
 
     private int receipt;
 
+
     public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable, int receipt) {
         this.time = time;
         this.date = date;

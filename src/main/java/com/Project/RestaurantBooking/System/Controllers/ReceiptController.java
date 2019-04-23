@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/reciepts")
-public class RecieptController {
+@RequestMapping("/receipts")
+public class ReceiptController {
 }
