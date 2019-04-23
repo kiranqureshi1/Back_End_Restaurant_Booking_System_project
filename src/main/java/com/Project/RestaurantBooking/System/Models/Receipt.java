@@ -17,8 +17,6 @@ public class Receipt {
     private int amount;
 
 
-//    private Booking booking;
-
     public Receipt(int amount) {
         this.amount = amount;
     }
