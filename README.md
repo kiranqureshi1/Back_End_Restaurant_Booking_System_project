@@ -9,6 +9,9 @@ To start the Java project:
 
 Restaurant Booking System:
 
+the app alows the user to book a table sorting by date and time for a customer and update while avoiding double bookings.It displays list of customers by frequency of visits, their number of bookings and the amount they spent. 
+
+
 Suggested user: Restaurant manager
 
 You have been tasked to create a booking system for a brand new restaurant. The restaurant needs a way to book and arrange tables for customers who are booking over the phone. This system is for the staff to use.
