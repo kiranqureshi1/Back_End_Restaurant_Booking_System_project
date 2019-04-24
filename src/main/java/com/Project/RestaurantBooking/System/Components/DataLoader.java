@@ -56,7 +56,7 @@ public class DataLoader implements ApplicationRunner {
         restaurantTableRepository.save(restaurantTable2);
 
 
-        Booking booking1 = new Booking(3, 04, customer1, restaurantTable1, 40);
+        Booking booking1 = new Booking(3, 4, 4, customer1, restaurantTable1, 40);
 
         RestaurantTable restaurantTable3 = new RestaurantTable(3);
         restaurantTableRepository.save(restaurantTable3);
@@ -69,10 +69,10 @@ public class DataLoader implements ApplicationRunner {
 
         bookingRepository.save(booking1);
 
-        Booking booking2 = new Booking(4, 05, customer2, restaurantTable2, 30);
+        Booking booking2 = new Booking(4, 05, 4, customer2, restaurantTable2, 30);
         bookingRepository.save(booking2);
 
-        Booking booking3 = new Booking(4, 05, customer2, restaurantTable1, 50);
+        Booking booking3 = new Booking(4, 05, 4, customer2, restaurantTable1, 50);
         bookingRepository.save(booking3);
 
 

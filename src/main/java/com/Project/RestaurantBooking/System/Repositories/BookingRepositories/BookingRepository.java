@@ -10,8 +10,10 @@ import java.util.List;
 @RepositoryRestResource(excerptProjection = BookingProjection.class)
 public interface BookingRepository extends JpaRepository<Booking, Long>, BookingRepositoryCustom{
 
-    List<Booking> findBookingsByDate(int date);
+    List<Booking> findBookingsByDay(int day);
 
-    List<Booking> findBookingsByDateAndTime(int date, int time);
+    List<Booking> findBookingsByDayAndMonth(int day, int month);
+
+    List<Booking> findBookingsByDayAndMonthAndTime(int day, int month, int time);
 
 }

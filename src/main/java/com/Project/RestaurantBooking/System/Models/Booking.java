@@ -18,7 +18,10 @@ public class Booking {
     private int time;
 
     @Column
-    private int date;
+    private int day;
+
+    @Column
+    private int month;
 
     @JsonIgnoreProperties("bookings")
     @ManyToOne
@@ -37,9 +40,10 @@ public class Booking {
     private int receipt;
 
 
-    public Booking(int time, int date, Customer customer, RestaurantTable restaurantTable, int receipt) {
+    public Booking(int time, int day, int month, Customer customer, RestaurantTable restaurantTable, int receipt) {
         this.time = time;
-        this.date = date;
+        this.day = day;
+        this.month = month;
         this.customer = customer;
         this.restaurantTable = restaurantTable;
         this.receipt = receipt;
@@ -87,12 +91,20 @@ public class Booking {
         this.time = time;
     }
 
-    public int getDate() {
-        return date;
+    public int getDay() {
+        return day;
     }
 
-    public void setDate(int date) {
-        this.date = date;
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
     }
 
     public Customer getCustomer() {

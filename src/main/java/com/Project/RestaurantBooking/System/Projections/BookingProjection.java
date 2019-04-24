@@ -11,7 +11,8 @@ import org.springframework.data.rest.core.config.Projection;
 public interface BookingProjection {
     long getId();
     int getTime();
-    int getDate();
+    int getDay();
+    int getMonth();
     Customer getCustomer();
     RestaurantTable getRestaurantTable();
     int getReceipt();

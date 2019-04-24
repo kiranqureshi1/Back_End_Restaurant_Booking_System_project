@@ -18,13 +18,20 @@ public class BookingController {
     @Autowired
     BookingRepository bookingRepo;
 
-    @GetMapping(value = "/date/{date}")
-    public List<Booking> findBookingsByDate(@PathVariable int date) {
-        return bookingRepo.findBookingsByDate(date);
+    @GetMapping(value = "/day/{day}")
+    public List<Booking> findBookingsByDay(@PathVariable int day) {
+        return bookingRepo.findBookingsByDay(day);
     }
 
-    @GetMapping(value = "/date/{date}/time/{time}")
-    public List<Booking> findBookingsByDateAndTime(@PathVariable int date, @PathVariable int time) {
-        return bookingRepo.findBookingsByDateAndTime(date, time);
+    @GetMapping(value = "/day/{day}/month/{month}")
+    public List<Booking> findBookingsByDayAndTime(@PathVariable int day,
+                                                   @PathVariable int month) {
+        return bookingRepo.findBookingsByDayAndMonth(day, month);
+    }
+
+    @GetMapping(value = "/day/{day}/month/{month}/time/{time}")
+    public List<Booking> findBookingsByDayAndMonthAndTime(@PathVariable int day, @PathVariable int month,
+                                                          @PathVariable int time) {
+        return bookingRepo.findBookingsByDayAndMonthAndTime(day, month, time);
     }
 }
